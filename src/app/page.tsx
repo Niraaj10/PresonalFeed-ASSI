@@ -13,6 +13,8 @@ import { useState } from "react";
 export default function Home() {
   const [activeTab, setActiveTab] = useState("home");
   const [dashboardSubTab, setDashboardSubTab] = useState<"feed" | "trending" | "favorites">("feed");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 
   const renderContent = () => {
     switch (activeTab) {
@@ -41,18 +43,22 @@ export default function Home() {
       </div>
       <div className="bg-glow-green"></div>
 
-      <Header />
-
-      <div className="relative mt-20 z-10 overflow-y-scroll hideScroll flex p-10 gap-5">
+      <Header onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} />
+        
+      <div className="relative mt-20 z-10 overflow-y-scroll hideScroll flex p-2 md:p-10 gap-5">
 
         <Sidebar
+          isSBOpen={isSidebarOpen}
+          onCloswSB={() => setIsSidebarOpen(false)}
           setActiveTab={setActiveTab}
           activeTab={activeTab}
           dashboardSubTab={dashboardSubTab}
           setDashboardSubTab={setDashboardSubTab}
         />
 
-        <div className="h-[82vh] overflow-hidden hideScroll rounded-2xl flex flex-col items-start-start w-full">{renderContent()}</div>
+        <div className="h-[90%] md:h-[82vh] overflow-hidden hideScroll rounded-2xl flex flex-col items-start-start w-full">
+          {renderContent()}
+        </div>
 
 
       </div>

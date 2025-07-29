@@ -111,7 +111,7 @@ export default function ProfileSection() {
         ));
 
     return (
-        <section className="w-full h-full mx-auto p-6 bg-black backdrop-blur-md border border-gray-600/30 rounded-xl shadow-md space-y-6">
+        <section className="w-full h-[80vh] md:h-full mb-20 md:mb-0 mx-auto p-6 bg-black backdrop-blur-md border border-gray-600/30 rounded-xl shadow-md space-y-6">
             <h1 className="text-2xl font-bold pb-5 text-white border-b border-gray-400/15">Your Profile</h1>
 
 

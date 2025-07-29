@@ -254,7 +254,7 @@ export default function Feed() {
                 }
             />
 
-            <div className="w-2xl h-[91vh] overflow-y-scroll hideScroll bg-black backdrop-blur-2xl border border-gray-400/20 rounded-xl">
+            <div className="w-full md:w-2xl h-[91vh] overflow-y-scroll hideScroll bg-black backdrop-blur-2xl border border-gray-400/20 rounded-xl">
                 <nav className="sticky top-0 z-50 bg-black border-b border-gray-400/20 backdrop-blur-2xl text-sm text-white flex justify-around items-center h-14 w-full">
                     Personalized Feed
                 </nav>

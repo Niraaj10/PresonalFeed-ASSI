@@ -151,8 +151,8 @@ export default function Trending() {
   }, [page]);
 
   return (
-    <div className="w-full flex ml-7">
-      <div className="w-2xl h-[89vh] overflow-y-scroll hideScroll backdrop-blur-2xl bg-black border border-gray-400/20 rounded-xl">
+    <div className="w-full flex md:ml-7">
+      <div className="w-full md:w-2xl h-[89vh] overflow-y-scroll hideScroll backdrop-blur-2xl bg-black border border-gray-400/20 rounded-xl">
         <nav className="sticky top-0 z-50 bg-black border-b border-gray-400/20 backdrop-blur-2xl text-sm text-white flex justify-around items-center h-14 w-full">
           Trending Now
         </nav>

@@ -53,7 +53,7 @@ const ContentCards: FC<ContentCardsProps> = ({
   };
 
   return (
-    <li className="relative bg-zinc-900 rounded-xl border border-gray-400/10 overflow-hidden shadow-xl w-[400px] text-white">
+    <li className="relative bg-zinc-900 rounded-xl border border-gray-400/10 overflow-hidden shadow-xl w-[350px] mx-auto md:w-[400px] text-white">
       <div className="relative w-full">
         <img
           src={image}

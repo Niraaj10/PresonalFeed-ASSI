@@ -35,7 +35,7 @@ export default function SocialsTab() {
   }, []);
 
   return (
-    <ul className="w-[400px] mx-auto py-4 space-y-6 mt-5">
+    <ul className="w-full md:w-[400px] mx-auto py-4 space-y-6 mt-5">
       {posts.map((post, id) => (
         <ContentCards
         showFav={false}

@@ -41,9 +41,9 @@ export default function HomeSection() {
     }, [user.email]);
 
     return (
-        <div className="rounded-2xl  w-2xl overflow-hidden">
+        <div className="rounded-2xl w-full md:w-2xl overflow-hidden">
 
-            <nav className="sticky rounded-tr-2xl top-0 z-50 bg-black border-b border-gray-400/20  backdrop-blur-2xl text-sm text-white flex justify-around items-center h-14 w-2xl ">
+            <nav className="sticky rounded-tr-2xl top-0 z-20 bg-black border-b border-gray-400/20  backdrop-blur-2xl text-sm text-white flex justify-around items-center h-14 w-full md:w-2xl ">
                 <button
                     onClick={() => setActiveTab("news")}
                     className={`cursor-pointer px-4 py-2 border-r border-gray-400/20 w-full ${activeTab === "news" ? "text-white font-bold scale-110" : "text-gray-400"}`}
@@ -58,13 +58,13 @@ export default function HomeSection() {
                 </button>
                 <button
                     onClick={() => setActiveTab("socials")}
-                    className={`cursor-pointer px-4 py-2 w-full ${activeTab === "socials" ? "text-white font-bold scale-110" : "text-gray-400"}`}
+                    className={`cursor-pointer  px-4 py-2 w-full ${activeTab === "socials" ? "text-white font-bold scale-110" : "text-gray-400"}`}
                 >
                     Socials
                 </button>
             </nav>
 
-            <div className="flex-grow h-[91vh] pb-24 w-2xl flex items-start justify-start  bg-black overflow-scroll hideScroll rounded-br-2xl">
+            <div className="flex-grow h-[91vh] pb-24 w-full md:w-2xl flex items-start justify-start  bg-black overflow-scroll hideScroll rounded-br-2xl">
                 {activeTab === "news" && <NewsTab />}
                 {activeTab === "movies" && <MovieTab />}
                 {activeTab === "socials" && <SocialsTab />}

@@ -16,20 +16,24 @@ type SidebarProps = {
     activeTab: string;
     setDashboardSubTab: (tab: "feed" | "trending" | "favorites") => void;
     dashboardSubTab: "feed" | "trending" | "favorites";
+    isSBOpen?: boolean;
+    onCloswSB?: () => void;
 };
 
-export default function Sidebar({ setActiveTab, activeTab, setDashboardSubTab, dashboardSubTab }: SidebarProps) {
+export default function Sidebar({ setActiveTab, activeTab, setDashboardSubTab, dashboardSubTab, isSBOpen, onCloswSB }: SidebarProps) {
+
 
     const user = useSelector((state: RootState) => state.user);
-    console.log(user)
+    // console.log(user)
+
     const [isDashboardOpen, setDashboardOpen] = useState(true)
 
     const handleDashboardClick = () => {
         if (activeTab === "dashboard") {
-                        setDashboardOpen(prev => !prev);
+            setDashboardOpen(prev => !prev);
         } else {
             setActiveTab("dashboard");
-            setDashboardOpen(true); 
+            setDashboardOpen(true);
         }
     };
 
@@ -41,7 +45,14 @@ export default function Sidebar({ setActiveTab, activeTab, setDashboardSubTab, d
     };
 
     return (
-        <div className="bg-transparent backdrop-blur-2xl border border-gray-400/15 rounded-2xl text-white w-96 p-4 flex flex-col justify-between items-start">
+        <div className={` backdrop-blur-2xl border border-gray-400/15 rounded-2xl text-white p-4 flex flex-col justify-between items-start w-full
+    fixed top-26 md:top-0 left-0 h-[80vh] z-50 transition-transform duration-300 max-w-xs
+    ${isSBOpen ? "translate-x-0 m-5 bg-black" : "-translate-x-full bg-transparent"} 
+    md:relative md:translate-x-0 md:flex md:w-96
+         `}>
+
+            <button onClick={onCloswSB} className="md:hidden self-end text-white text-2xl">✕</button>
+            
             <ul className="flex flex-col justify-between items-start gap-6 px-5 mt-10 w-full">
                 <li onClick={() => setActiveTab("home")} className={`w-full border px-4 py-4 border-gray-400/10 rounded-xl flex gap-5 justify-start items-center ${activeTab === "home" ? "text-black bg-white" : ""}`}>
                     <span className="text-xl">
